@@ -63,6 +63,9 @@ class QuoteTableViewController: UITableViewController, SKPaymentTransactionObser
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isPurchased() {
+            return quotesToShow.count
+        }
         return quotesToShow.count + 1
     }
     
